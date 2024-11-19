@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import React from "react"
 import AllPlayers from './components/AllPlayers'
 import SinglePlayer from './components/SinglePlayer'
+import '../src/images/Puppybowl1.webp'
+// import '..src/images/woof.png'
 
 
 function App() {

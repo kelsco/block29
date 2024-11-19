@@ -1,6 +1,8 @@
 import { fetchPlayers } from "../API/index.js";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+// import '../src/images/Puppybowl1.webp'
+
 
 <form >
 
@@ -22,7 +24,7 @@ console.log("players: ", players);
 
 return (
     <div>
-        <h2>  All Pupper Dogs</h2>
+        <h2>  Puppy Bowl Presents</h2>
         <ul className="pupperList">
       {players.length ? (
         players.map((player) => (

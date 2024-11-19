@@ -6,9 +6,16 @@
   align-items: center;
 }
 
+
+
 body {
-  background-color: rgb(127, 51, 51);
+  background-image: url('../src/images/football.jpeg');
+  background-size: 550px 550px;
+  background-repeat: repeat;
+  background-position: center;
 }
+
+
 .pupperList {
   display: flex;
   justify-content: space-between;
@@ -18,11 +25,16 @@ body {
 }
 
 .pupper {
-  border: 2px solid black;
-  padding: 0px 50px 30px 50px;
+  border: 6px solid #ececec; 
+  padding: 0px 200px 30px 200px;
   margin-top: 30px;
   border-radius: 1rem;
-  background-color: rgb(246, 215, 215);
+  background-color: #6bba62;
+}
+
+.pupper:hover {
+  background-color: #9ae17b;
+  cursor: pointer;
 }
 
 h2 {
@@ -32,14 +44,42 @@ h2 {
   font-family: 'Pacifico', cursive;
   font-style: oblique;
   letter-spacing: 4px;
+  border: 6px solid #ececec;
+  background-color: #6bba62;
+  border-radius: 10px;
+  padding: 5px 0px;
+  margin-left: 350px;
+  margin-right: 300px;
 }
 
 h4 {
-  font-size: 25px;
+  font-size: 35px;
   font-family: 'Pacifico', cursive;
 }
 
 .breed {
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'Pacifico', cursive;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.info {
+  color: black;
+  border: 6px solid #ececec; 
+  padding: 0px 30px 30px 30px;
+  margin: 0px;
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 1rem;
+  background-color: #6bba62;
+  font-size: x-large;
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+}
+
+.info:hover {
+  background-color: #9ae17b;
+  cursor: pointer;
 }

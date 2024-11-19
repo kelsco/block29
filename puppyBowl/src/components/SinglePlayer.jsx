@@ -4,7 +4,7 @@ import { fetchSinglePlayer } from "../API/index.js"
 
 const styles = {
     image: {
-        width: "300px",
+        width: "400px",
         height: "auto",
         borderRadius: "10px",
     },
@@ -23,7 +23,8 @@ export default function SinglePlayer({ puppyId }){
     }, []);
 return (
     <>
-    <div onClick={(e) => navigation('/')}> Pup-Pup-PUPPY
+    <h2>Player Info</h2>
+    <div className="info" onClick={(e) => navigation('/')}> Pup-Pup-PUPPY DOG!
         {
             puppy && (
                 <div>
