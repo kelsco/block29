@@ -1,16 +1,14 @@
-import { fetchPlayers } from "../API/index.js";
+import { fetchPlayers, fetchSinglePlayer } from "../API";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import '../src/images/Puppybowl1.webp'
+import SearchBar from "./SearchBar.jsx";
+import AddPlayer from "./AddPlayer.jsx";
+import SinglePlayer from "./SinglePlayer.jsx";
 
 
-<form >
 
-</form>
-
-
-export default function AllPlayers({puppyID, setPuppyId}) {
-    const navigation = useNavigate();
+export default function AllPlayers({puppyID, setPuppyId, }) {
+    const navigate = useNavigate();
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
@@ -25,13 +23,15 @@ console.log("players: ", players);
 return (
     <div>
         <h2>  Puppy Bowl Presents</h2>
+       <AddPlayer />
+        <SearchBar players={players}/>
         <ul className="pupperList">
       {players.length ? (
         players.map((player) => (
           <li className="pupper">
             <div key={player.id} onClick={(e) => {
             setPuppyId(player.id)
-            navigation("/player")
+            navigate("/player")
           }}>  
             <h4>{player.name}</h4>
             <img id="dogimg" src={player.imageUrl} alt={player.name}/>
