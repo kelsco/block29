@@ -18,13 +18,12 @@ export default function AllPlayers({puppyID, setPuppyId, }) {
         }
         fetchData();
     }, []);
-console.log("players: ", players);
 
 return (
     <div>
         <h2>  Puppy Bowl Presents</h2>
+       <SearchBar players={players} setPuppyId={setPuppyId}/> 
        <AddPlayer />
-        <SearchBar players={players}/>
         <ul className="pupperList">
       {players.length ? (
         players.map((player) => (

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
+
 export default function AddPlayer() {
     const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2408-FTB-MT-WEB-PT";
     const [name, setName] = useState("");
     const [breed, setBreed] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [message, setMessage] = useState(""); // To show success or error messages
+    
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -34,9 +36,11 @@ export default function AddPlayer() {
                 const result = await response.json();
                 console.log(result);
                 setMessage("Player added successfully!"); // Success message
+
                 setName(""); // Optionally reset form fields
                 setBreed("");
                 setImageUrl("");
+                history.go(0);
             } else {
                 setMessage("Failed to add player. Try again.");
             }
@@ -47,10 +51,11 @@ export default function AddPlayer() {
     }
 
     return (
-        <>
-            <h2>Add New Player</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <> 
+            
+            <form className="addPlayer" onSubmit={handleSubmit}><br />
+               
+                <div><div><h3>Add New Player</h3></div>
                     <label>
                         Name:
                         <input

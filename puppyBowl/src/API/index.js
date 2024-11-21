@@ -12,3 +12,14 @@ export async function fetchSinglePlayer(playerId) {
     console.log('data: ,', data.data.player);
     return data.data.player;
 }
+
+export async function deletePlayer(playerId) {
+    try {
+        const response = await fetch(`${API_URL}/players/${playerId}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+    } catch (error) {
+        console.error(error);
+    }
+}

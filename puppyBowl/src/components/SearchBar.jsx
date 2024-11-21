@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
-export default function SearchBar({ players }) {
+export default function SearchBar({ players, setPuppyId }) {
     const [search, setSearch] = useState("");
     const [foundPuppy, setFoundPuppy] = useState(null);
+    const navigate = useNavigate();
         
     function handleSubmit(e) {
             e.preventDefault();
@@ -15,9 +17,9 @@ export default function SearchBar({ players }) {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        <form className="searchBar" onSubmit={handleSubmit}>
         <label>
-            Find Puppy {" "}
+            Find Puppy: {" "}
             <input 
             type="text" 
             placeholder="Search players by name"
@@ -28,7 +30,24 @@ export default function SearchBar({ players }) {
         </label>
         <button>Search</button>
         </form>
-        {foundPuppy && <div>{foundPuppy.name}</div>}
+        {/* {foundPuppy && <div><h2>{foundPuppy.name}</h2> <h2>{foundPuppy.breed} </h2>
+            <img id="dogimg" src={foundPuppy.imageUrl} />
+            </div>} */}
+
+
+          {foundPuppy &&      
+                <div className="searchPups" key={foundPuppy.id} onClick={(e) => {
+            setPuppyId(foundPuppy.id)
+            navigate("/player")
+          }}>  
+          <li className="pupper">
+            <h4>{foundPuppy.name}</h4>
+            <img id="foundPuppy" src={foundPuppy.imageUrl} alt={foundPuppy.name}/>
+            <div className="breed">{foundPuppy.breed}</div>
+         </li>
+         </div>
+             }
+        
         </>
     );
 }
